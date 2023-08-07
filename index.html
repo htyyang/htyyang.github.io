@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Haotian(Louis) Yang</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Rubik:300,500,700"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+          Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+          sans-serif;
+        font-size: calc(10px + 0.33vw);
+        -webkit-font-smoothing: antialiased;
+        padding: 5vh 10vw;
+        color: #121314;
+      }
+      h1 {
+        font-size: 4.5em;
+        font-weight: 500;
+        margin-bottom: 0;
+      }
+      h2 {
+        font-size: 2em;
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+      p {
+        font-size: 1.6em;
+        font-weight: 300;
+        line-height: 1.4;
+        max-width: 32em;
+      }
+      a {
+        text-decoration: none;
+        white-space: nowrap;
+        color: #121314;
+        position: relative;
+      }
+      a:after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 66%;
+        left: -0.1em;
+        right: -0.1em;
+        bottom: 0;
+        transition: top 200ms cubic-bezier(0, 0.8, 0.13, 1);
+        background-color: rgba(169, 183, 170, 0.5);
+      }
+      a:hover:after {
+        top: 0%;
+      }   
+      /* Flex container */
+      .container {
+          display: flex;
+          justify-content: space-between;
+      }
+      /* Left section */
+      .left-section {
+          flex: 1;
+          padding-right: 2em; /* spacing between sections */
+      }
+      /* Right section */
+      .right-section {
+        flex: 1;
+        padding-left: 2em; /* Some spacing between sections */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centers content horizontally */
+        gap: 1em; /* Space between items */
+      }
+      .right-section img {
+        width: 60%; /* Adjust as needed */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* A subtle shadow */
+      }
+      .right-section img:first-child {
+        margin-top: 100px; /* Adjust this value as needed */
+      }
+      /* Text in the right section */
+      .right-section p {
+          text-align: center; /* Centers the text */
+          font-size: 1.2em; /* Adjust as needed */
+      }
+      /* code block */
+      .code-block {
+          font-family: 'Courier New', Courier, monospace;
+          font-size: 16px;
+          background-color: #f4f4f4;
+          border: 1px solid #ddd;
+          padding: 10px;
+          border-radius: 4px;
+          white-space: pre-wrap; /* Ensures whitespace is preserved */
+          word-wrap: break-word; /* Allows long lines to wrap */
+          line-height: 1.5;
+          color: #333;
+      }
+      .email-button {
+          display: inline-block;
+          padding: 10px 20px;
+          background-color: rgba(169, 183, 170, 1); /* Adjust color as needed */
+          color: #ffffff;
+          text-decoration: none;
+          border-radius: 5px;
+          font-weight: bold;
+          margin-top: auto; /* Pushes the button to the bottom */
+          align-self: center; /* Centers the button horizontally */
+          transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+      }
+      .email-button:hover {
+          background-color: rgba(169, 183, 170, 0.5); /* Slightly darker shade for hover */
+      }
+      /* ul */
+      ul.custom-list {
+          font-family: 'Arial', sans-serif;
+          font-size: 23px;
+          color: #333;
+          list-style-type: disc; /* Default bullet type, but you can change it */
+          margin: 0 0 20px 20px; /* Adjust as needed */
+          padding: 0;
+      }
+      ul.custom-list li {
+          line-height: 1.5;
+          margin-bottom: 10px; /* Space between list items */
+          padding-left: 25px; /* Space to the left of the text, can be adjusted or removed */
+          position: relative;
+      }
+      /* preview of URLs */
+      #imagePreview {
+        position: absolute;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        padding: 5px;
+        display: none;
+        /* make sure the preview window is on the top */
+        z-index: 1000;
+      } 
+      #imagePreview img {
+          max-width: 200px;   
+          max-height: 200px; 
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-section">
+        <h1>Hello.</h1>
+        <p style="font-weight: 500; font-size: 2.2em">My name is Haotian(Louis) Yang.</p>
+        <p>
+          I am a rising junior college student at the <a href="https://www.rochester.edu/" target="_blank"
+          class="preview-link" 
+          data-image="https://github.com/htyyang/htyyang.github.io/blob/main/image/website_screenshot/uni-rochester.png?raw=true"
+          data-description="official website of the University of Rochester.">University of Rochester,</a>
+          pursuing a Bachelor of Science in Electrical and Computer Engineering (ECE) and minoring in Computer Science. 
+          And I am currently taking a gap semester to explore my career interests and gain hands-on, industrial-level coding experience.
+        </p>
+        <br>
+        <h2>Past Experience</h2>
+        <p>
+          1. Graduated from
+          <a href="https://www.chgzfls.com/" target="_blank" class="preview-link" 
+          data-image="https://github.com/htyyang/htyyang.github.io/blob/main/image/website_screenshot/Guangzhou_Foreign_Language_School_logo.png?raw=true"
+          data-description="official website of the Guangzhou Foreign Language School.">Guangzhou Foreign Language School (high school)</a> 
+          in May 2021. I am proud to have been a part of the school's soccer team
+          <a href="https://space.bilibili.com/350758656/channel/series" target="_blank"> (some videos at bilibili.com)</a>. 
+          <br>
+          <br>
+          2. Began my official career path in 2022 as a student employee for campus 
+          <a href="https://github.com/htyyang/htyyang.github.io/blob/main/image/profile/dining%20_services.jpg?raw=true" target="_blank"
+          class="preview-link" data-image="https://github.com/htyyang/htyyang.github.io/blob/main/image/profile/dining%20_services.jpg?raw=true">dining services </a>
+          and later at a Biomedical Engineering Department laboratory.
+          <div id="imagePreview">
+            <img id="previewImage" src="" alt="Image Preview" />
+          </div>
+        </p>
+        <p>
+          3. Started volunteering for   
+          <a href="http://www.marysplaceoutreach.org/" target="_blank" class="preview-link" 
+          data-image="https://github.com/htyyang/htyyang.github.io/blob/main/image/website_screenshot/mary's%20place.png?raw=true"
+          data-description="official website of Mary's Place Refugee Outreach.">Mary's Place Refugee Outreach</a>
+          by editing and managing website and social medias from May 2023. Helping refugees makes me feel like I've truly contributed to the world. You're welcome to join us.
+        </p>
+        <br>
+        <h2>Ongoing & Future Plans</h2>
+        <p>
+          1. tmarket: web crawler to scrape professional soccer players'data from transfermarket.com | <code>Python, HTML, Scrapy, MySQL</code>
+          <ul class="custom-list">
+            <li>finished coding part of scraping players' basic information</li>
+            <li>trying to find an elegant way to run the project instead of using scrapy command</li>
+            <li>optimizing the pipelines of data to MySQL and CSV file formats</li>
+          </ul>
+        </p>
+        <p>
+          2. Incoming intern at 
+          <a href="https://www.gacrnd.com/" target="_blank">GAC R&D Center</a>
+        </p>
+      </div>
+      <div class="right-section">
+        <img src="https://github.com/htyyang/htyyang.github.io/blob/main/image/profile/my_photo1.jpg?raw=true" alt="Haotian(Louis) Yang">
+        <img src="https://github.com/htyyang/htyyang.github.io/blob/main/image/profile/my_photo2.jpg?raw=true" alt="Haotian(Louis) Yang on his motrocycle">
+        <a href="mailto:hyang57@u.rochester.edu" class="email-button">Contact with me by Email</a>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      /* window preview */
+        $(document).ready(function() {
+            $('.preview-link').hover(function(e) {
+                // Show the preview
+                $('#previewImage').attr('src', $(this).data('image'));
+                $('#imagePreview').css({
+                    top: e.pageY + 10 + 'px',
+                    left: e.pageX + 10 + 'px'
+                }).fadeIn();
+            }, function() {
+                // Hide the preview
+                $('#imagePreview').fadeOut();
+            });
+        });
+    </script>
+  </body>
+</html>
