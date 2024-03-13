@@ -12,7 +12,26 @@
     <link rel="icon" type="image/jpeg" href="image/icon/icon.jpg" sizes="32x32">
     <style>
 
+    @media (max-width: 800px) {
+      .nav-container {
+        padding: 0 5vw; /* Reduce padding on smaller screens */
+        flex-wrap: wrap; /* Allow items to wrap to the next line */
+      }
+      
+      .nav-menu {
+        justify-content: center; /* Center-align the menu items */
+        width: 100%; /* Ensure the menu takes full width */
+        padding-top: 20px; /* Add some space between the logo and menu items */
+      }
 
+      .nav-item {
+        margin: 5px 0; /* Adjust margin for nav items */
+      }
+      
+      .navbar {
+        box-shadow: none; /* Optional: remove box-shadow on smaller screens for a flat design */
+      }
+    }
       /* Navigation Bar Styles */
       .navbar {
         background-color: #fff; /* Adjust the background color as needed */
@@ -21,7 +40,9 @@
         width: 100%;
         top: 0;
         z-index: 1000;
+        
       }
+      
 
       .nav-container {
         display: flex;
