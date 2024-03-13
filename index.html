@@ -9,7 +9,71 @@
       href="https://fonts.googleapis.com/css?family=Rubik:300,500,700"
       rel="stylesheet"
     />
+    <link rel="icon" type="image/jpeg" href="image/icon/icon.jpg" sizes="32x32">
     <style>
+
+
+      /* Navigation Bar Styles */
+      .navbar {
+        background-color: #fff; /* Adjust the background color as needed */
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        position: relative;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10vw; /* Consistent with body padding */
+        height: 60px; /* Adjust based on your preference */
+      }
+
+      .nav-logo {
+        font-weight: 700;
+        font-size: 1.6em;
+        color: #121314;
+      }
+
+      .nav-menu {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav-item {
+        margin-left: 20px;
+      }
+
+      .nav-link {
+        text-decoration: none;
+        color: #121314;
+        font-weight: 500;
+        font-size: 1em;
+        transition: color 0.3s ease;
+      }
+
+      .nav-link:hover {
+        color: #000; /* Change hover color as needed */
+      }
+      .navbar a {
+        color: #000; /* Set color to black */
+        text-decoration: none; /* Ensure no underline */
+        position: static; /* Override if needed, depending on your layout */
+      }
+
+      .navbar a:after {
+        display: none; /* Hide the pseudo-element to remove the hover effect */
+      }
+
+      .navbar a:hover, .navbar a:focus {
+        color: #000; /* Maintain black color on hover/focus */
+        /* No additional styles needed here to ensure no hover effect */
+      }
+
       body {
         font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI',
           Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
@@ -148,6 +212,20 @@
     </style>
   </head>
   <body>
+
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="#home" class="nav-logo">Haotian Yang's Site</a>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="./" class="nav-link">HOME</a></li>
+          <li class="nav-item"><a href="./pages/blog.html" class="nav-link">BLOG</a></li>
+          <li class="nav-item"><a href="./pages/course.html" class="nav-link">COURSE</a></li>
+          <li class="nav-item"><a href="./pages/experience.html" class="nav-link">EXPERIENCE</a></li>
+        </ul>
+      </div>
+    </nav>
+    
+
     <div class="container">
       <div class="left-section">
         <h1>Hello.</h1>
@@ -157,8 +235,8 @@
           class="preview-link" 
           data-image="image/website_screenshot/uni-rochester.png"
           data-description="official website of the University of Rochester.">University of Rochester,</a>
-          pursuing a Bachelor of Science in Electrical and Computer Engineering (ECE) and minoring in Computer Science. 
-          And I am currently taking a gap semester to explore my career interests and gain hands-on, industrial-level coding experience.
+          pursuing a Bachelor of Science in Electrical and Computer Engineering (ECE) and a Bachelor of Art in Computer Science (CS). 
+          And I am currently in my fifth semesters here.
         </p>
         <br>
         <h2>Past Experience</h2>
