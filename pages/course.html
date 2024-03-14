@@ -4,8 +4,150 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Course</title>
+    <style>
+
+    /* Navigation bar */
+    @media (max-width: 800px) {
+        .nav-container {
+            padding: 0 5vw; 
+            flex-wrap: wrap;
+        }
+        
+        .nav-menu {
+            justify-content: center;
+            width: 100%;
+            padding-top: 20px; 
+        }
+
+        .nav-item {
+            margin: 5px 0; 
+        }
+        
+        .navbar {
+            box-shadow: none; 
+        }
+        }
+        .navbar {
+            background-color: #fff; /* Adjust the background color as needed */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            
+        }
+        
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10vw; /* Consistent with body padding */
+            height: 60px; /* Adjust based on your preference */
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1.6em;
+            color: #121314;
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-item {
+            margin-left: 20px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #121314;
+            font-weight: 500;
+            font-size: 1em;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #000; 
+        }
+        .navbar a {
+            color: #000; 
+            text-decoration: none; 
+            position: static; 
+        }
+
+        .navbar a:after {
+            display: none; 
+        }
+
+        .navbar a:hover, .navbar a:focus {
+            color: #000; 
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .academic_year {
+            margin-left: 100px;
+            margin-top: 20px;
+        }
+        .academic_year h2 {
+            color: #333;
+        }
+        .courses {
+            margin-left: 100px;
+        }
+        .course {
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+          <a href="./" class="nav-logo">Haotian Yang's Site</a>
+          <ul class="nav-menu">
+            <li class="nav-item"><a href="../index.html" class="nav-link">HOME</a></li>
+            <li class="nav-item"><a href="./blog.html" class="nav-link">BLOG</a></li>
+            <li class="nav-item"><a href="./course.html" class="nav-link">COURSE</a></li>
+            <li class="nav-item"><a href="https://www.linkedin.com/in/htyang114/" class="nav-link">EXPERIENCE</a></li>
+          </ul>
+        </div>
+      </nav>
+
+<div class="academic_year">
+    <h2>2021-2022</h2>
+    <div class="courses">
+        <div class="course">ECE 114 - Intro to C/C++ Programming</div>
+        <div class="course">ECE 112 - Logic Design</div>
+        <div class="course">CSC 171 - Introduction to Computer Science</div>
+    </div>
+</div>
+
+<div class="academic_year">
+    <h2>2022-2023</h2>
+    <div class="courses">
+        <div class="course">ECE 113 - Circuits & Signals</div>
+        <div class="course">ECE 200 - Computer Organization</div>
+        <div class="course">ECE 213 - Introduction to Hardware Security</div>
+        <div class="course">CSC 172 - Data Structures and Algorithms</div>
+    </div>
+</div>
+
+<div class="academic_year">
+    <h2>2023-2024</h2>
+    <div class="courses">
+        <div class="course">ECE 204 - Multiprocessor Arch</div>
+        <div class="course">ECE 208 - The Art of Machine Learning</div>
+        <div class="course">CSC 214 - Mobile App Development</div>
+        <div class="course">CSC 240 - Data Mining</div>
+    </div>
+</div>
 
 </body>
 </html>
