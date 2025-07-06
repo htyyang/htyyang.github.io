@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Headphone Amplifier</title>
+  <link rel="icon" type="image/png" href="../image/icon/icon.png" sizes="32x32">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Rubik', sans-serif;
+      background-color: #fafafa;
+      color: #222;
+      margin: 4vh 8vw;
+      line-height: 1.7;
+    }
+
+    h1, h2 {
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+
+    h1 {
+      font-size: 3.2em;
+      margin-bottom: 0.6em;
+      border-bottom: 3px solid #e7cc20;
+      display: inline-block;
+      padding-bottom: 0.2em;
+    }
+
+    h2 {
+      font-size: 2em;
+      margin-top: 2.5em;
+      margin-bottom: 0.5em;
+    }
+
+    p {
+      font-size: 1.15em;
+      max-width: 850px;
+      margin-bottom: 1.5em;
+    }
+
+    .image-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 1em;
+    }
+
+    .image-row img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .image-row img:hover {
+      transform: scale(1.03);
+    }
+
+    iframe {
+      margin-top: 1em;
+      width: 100%;
+      height: 450px;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    ul {
+      font-size: 1.15em;
+      padding-left: 1.5em;
+      max-width: 800px;
+    }
+
+    ul li {
+      margin-bottom: 0.7em;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <h1>Single-Stage Headphone Amplifier with CMOY Architecture</h1>
+
+  <h2>Report & Demo</h2>
+  <ul>
+      <li><a href="../doc/essay/ECE222_Final_Project_Report.pdf" target="_blank">Report PDF</a></li>
+      <li><a href="../video/demo/ECE222_Final_Project_demo.mp4" target="_blank">Demo MP4</a></li>
+  </ul>
+
+  <h2>Team Member</h2>
+  <ul>
+    <li>Haydon Yang</li>
+    <li>Zirui Li</li>
+  </ul>
+
+  <h2>Introduction</h2>
+  <p>
+    This project aims to build a practical single-stage headphone amplifier using the CMOY
+architecture to amplify common audio signals for use with devices like Apple EarBuds. Our
+team selected a non-inverting amplifier configuration using the OPA1656 op-amp, along with
+dual BUF634A buffer stages for better current drive. The CMOY amplifier, originally designed
+by Chu Moy, is known for its compact layout, clean audio performance, and accessibility for
+beginners. Our main tasks included drafting the amplifier schematic based on the CMOY design,
+verifying functionality through simulation, assembling the circuit on a Printed Circuit Board
+(PCB), and testing the final build with an oscilloscope.
+  </p>
+
+</body>
+</html>
