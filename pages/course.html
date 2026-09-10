@@ -1,163 +1,212 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Core Course</title>
-    <link rel="icon" type="image/png" href="../image/icon/icon.png" sizes="32x32">
+    <link
+      rel="icon"
+      type="image/png"
+      href="../image/icon/icon.png"
+      sizes="32x32"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Rubik:300,500,700"
+      rel="stylesheet"
+    />
     <style>
-
-    /* Navigation bar */
-    @media (max-width: 800px) {
+      @media (max-width: 800px) {
         .nav-container {
-            padding: 0 5vw; 
-            flex-wrap: wrap;
-        }
-        
-        .nav-menu {
-            justify-content: center;
-            width: 100%;
-            padding-top: 20px; 
-        }
-
-        .nav-item {
-            margin: 5px 0; 
-        }
-        
-        .navbar {
-            box-shadow: none; 
-        }
-        }
-        .navbar {
-            background-color: #fff; /* Adjust the background color as needed */
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            position: relative;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            
-        }
-        
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 10vw; /* Consistent with body padding */
-            height: 60px; /* Adjust based on your preference */
-        }
-
-        .nav-logo {
-            font-weight: 700;
-            font-size: 1.6em;
-            color: #121314;
+          padding: 0 5vw; /* Reduce padding on smaller screens */
+          flex-wrap: wrap; /* Allow items to wrap to the next line */
         }
 
         .nav-menu {
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
+          justify-content: center; /* Center-align the menu items */
+          width: 100%; /* Ensure the menu takes full width */
+          padding-top: 20px; /* Add some space between the logo and menu items */
         }
 
         .nav-item {
-            margin-left: 20px;
+          margin: 5px 0; /* Adjust margin for nav items */
         }
 
-        .nav-link {
-            text-decoration: none;
-            color: #121314;
-            font-weight: 500;
-            font-size: 1em;
-            transition: color 0.3s ease;
-        }
-
-        .nav-link:hover {
-            color: #000; 
-        }
-        .navbar a {
-            color: #000; 
-            text-decoration: none; 
-            position: static; 
-        }
-
-        .navbar a:after {
-            display: none; 
-        }
-
-        .navbar a:hover, .navbar a:focus {
-            color: #000; 
+        .navbar {
+          box-shadow: none; /* Optional: remove box-shadow on smaller screens for a flat design */
         }
 
         body {
-            font-family: Arial, sans-serif;
+          padding: 2vh 5vw;
         }
-        .academic_year {
-            margin-left: 100px;
-            margin-top: 20px;
-        }
-        .academic_year h2 {
-            color: #333;
-        }
+
+        .academic_year,
         .courses {
-            margin-left: 100px;
+          margin-left: 10px !important;
         }
-        .course {
-            margin-top: 10px;
-        }
+      }
+      /* Navigation Bar Styles */
+      .navbar {
+        background-color: #fff; /* Adjust the background color as needed */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        position: relative;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10vw; /* Consistent with body padding */
+        height: 60px; /* Adjust based on your preference */
+      }
+
+      .nav-logo {
+        font-weight: 700;
+        font-size: 1.6em;
+        color: #121314;
+      }
+
+      .nav-menu {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav-item {
+        margin-left: 20px;
+      }
+
+      .nav-link {
+        text-decoration: none;
+        color: #121314;
+        font-weight: 500;
+        font-size: 1em;
+        transition: color 0.3s ease;
+      }
+
+      .nav-link:hover {
+        color: #000; /* Change hover color as needed */
+      }
+      .navbar a {
+        color: #000; /* Set color to black */
+        text-decoration: none; /* Ensure no underline */
+        position: static; /* Override if needed, depending on your layout */
+      }
+
+      .navbar a:after {
+        display: none; /* Hide the pseudo-element to remove the hover effect */
+      }
+
+      .navbar a:hover,
+      .navbar a:focus {
+        color: #000; /* Maintain black color on hover/focus */
+        /* No additional styles needed here to ensure no hover effect */
+      }
+
+      body {
+        font-family:
+          "Rubik",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Oxygen,
+          Ubuntu,
+          Cantarell,
+          "Open Sans",
+          "Helvetica Neue",
+          sans-serif;
+        font-size: calc(10px + 0.33vw);
+        -webkit-font-smoothing: antialiased;
+        padding: 5vh 10vw;
+        color: #121314;
+      }
+      .academic_year {
+        margin-left: 100px;
+        margin-top: 20px;
+      }
+      .academic_year h2 {
+        color: #333;
+      }
+      .courses {
+        margin-left: 100px;
+      }
+      .course {
+        margin-top: 10px;
+      }
     </style>
-</head>
-<body>
-
+  </head>
+  <body>
     <nav class="navbar">
-        <div class="nav-container">
-          <a href="../index.html" class="nav-logo">HY's Site</a>
-          <ul class="nav-menu">
-            <li class="nav-item"><a href="../index.html" class="nav-link">HOME</a></li>
-            <li class="nav-item"><a href="./blog.html" class="nav-link">BLOG</a></li>
-            <li class="nav-item"><a href="./course.html" class="nav-link">COURSE</a></li>
-            <li class="nav-item"><a href="https://www.linkedin.com/in/htyang114/" class="nav-link">LINKEDIN</a></li>
-          </ul>
-        </div>
-      </nav>
+      <div class="nav-container">
+        <a href="../index.html" class="nav-logo">HY's Site</a>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="../index.html" class="nav-link">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a href="./blog.html" class="nav-link">BLOG</a>
+          </li>
+          <li class="nav-item">
+            <a href="./course.html" class="nav-link">COURSE</a>
+          </li>
+          <li class="nav-item">
+            <a href="https://www.linkedin.com/in/htyang114/" class="nav-link"
+              >LINKEDIN</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-<div class="academic_year">
-    <h2>2021-2022</h2>
-    <div class="courses">
+    <div class="academic_year">
+      <h2>2021-2022</h2>
+      <div class="courses">
         <div class="course">ECE 114 - Intro to C/C++ Programming</div>
         <div class="course">ECE 112 - Logic Design</div>
         <div class="course">CSC 171 - Introduction to Computer Science</div>
+      </div>
     </div>
-</div>
 
-<div class="academic_year">
-    <h2>2022-2023</h2>
-    <div class="courses">
+    <div class="academic_year">
+      <h2>2022-2023</h2>
+      <div class="courses">
         <div class="course">ECE 113 - Circuits & Signals</div>
         <div class="course">ECE 200 - Computer Organization</div>
         <div class="course">ECE 213 - Introduction to Hardware Security</div>
         <div class="course">CSC 172 - Data Structures and Algorithms</div>
+      </div>
     </div>
-</div>
 
-<div class="academic_year">
-    <h2>2023-2024</h2>
-    <div class="courses">
-        <div class="course">AWS(Amazon Web Services) Certified Cloud Practitioner</div>
+    <div class="academic_year">
+      <h2>2023-2024</h2>
+      <div class="courses">
+        <div class="course">
+          AWS(Amazon Web Services) Certified Cloud Practitioner
+        </div>
         <div class="course">ECE 204 - Multiprocessor Arch</div>
         <div class="course">ECE 208 - The Art of Machine Learning</div>
         <div class="course">CSC 214 - Mobile App Development</div>
         <div class="course">CSC 240 - Data Mining</div>
-        <div class="course">MTH 701 - Probability and Statistics (University of New Hampshire)</div>
+        <div class="course">
+          MTH 701 - Probability and Statistics (University of New Hampshire)
+        </div>
+      </div>
     </div>
-</div>
 
-<div class="academic_year">
-    <h2>2024-2025</h2>
-    <div class="courses">
-        <div class="course">Teaching Assistant - CSC 214 (Mobile App Development)</div>
+    <div class="academic_year">
+      <h2>2024-2025</h2>
+      <div class="courses">
+        <div class="course">
+          Teaching Assistant - CSC 214 (Mobile App Development)
+        </div>
         <div class="course">ECE 221 - Electronic Devices & Circuits</div>
-        <div class="course">ECE 205 - Ising Machines: Principles and Practices</div>
+        <div class="course">
+          ECE 205 - Ising Machines: Principles and Practices
+        </div>
         <div class="course">ECE 216 - Mechatronics and Embedded Systems</div>
         <div class="course">CSC 216 - AR/VR Design</div>
         <div class="course">CSC 259 - Computer Imaging & Graphics</div>
@@ -168,19 +217,18 @@
         <div class="course">CSC 210 - Web Programming</div>
         <div class="course">CSC 211 - Introduction to HCI</div>
         <div class="course">PHIL 120 - Ethics of Technology</div>
+      </div>
     </div>
-</div>
 
-<div class="academic_year">
-    <h2>2025-2026</h2>
-    <div class="courses">
+    <div class="academic_year">
+      <h2>2025-2026</h2>
+      <div class="courses">
         <div class="course">ECE 230 - Electromagnetic Waves</div>
         <div class="course">ECE 241 - Signals</div>
         <div class="course">CSC 242 - Artificial Intelligence</div>
         <div class="course">FIN 205 - Financial Management</div>
         <div class="course">ECE 348 - Design Seminar</div>
+      </div>
     </div>
-</div>
-
-</body>
+  </body>
 </html>

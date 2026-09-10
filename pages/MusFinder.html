@@ -1,128 +1,316 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MusFinder</title>
-  <link rel="icon" type="image/png" href="../image/icon/icon.png" sizes="32x32">
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Rubik', sans-serif;
-      background-color: #fafafa;
-      color: #222;
-      margin: 4vh 8vw;
-      line-height: 1.7;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MusFinder</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="../image/icon/icon.png"
+      sizes="32x32"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @media (max-width: 800px) {
+        .nav-container {
+          padding: 0 5vw; /* Reduce padding on smaller screens */
+          flex-wrap: wrap; /* Allow items to wrap to the next line */
+        }
 
-    h1, h2 {
-      font-weight: 600;
-      color: #1a1a1a;
-    }
+        .nav-menu {
+          justify-content: center; /* Center-align the menu items */
+          width: 100%; /* Ensure the menu takes full width */
+          padding-top: 20px; /* Add some space between the logo and menu items */
+        }
 
-    h1 {
-      font-size: 3.2em;
-      margin-bottom: 0.6em;
-      border-bottom: 3px solid #1db954;
-      display: inline-block;
-      padding-bottom: 0.2em;
-    }
+        .nav-item {
+          margin: 5px 0; /* Adjust margin for nav items */
+        }
 
-    h2 {
-      font-size: 2em;
-      margin-top: 2.5em;
-      margin-bottom: 0.5em;
-    }
+        .navbar {
+          box-shadow: none; /* Optional: remove box-shadow on smaller screens for a flat design */
+        }
 
-    p {
-      font-size: 1.15em;
-      max-width: 850px;
-      margin-bottom: 1.5em;
-    }
+        body {
+          padding: 2vh 5vw;
+        }
 
-    .image-row {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-top: 1em;
-    }
+        .image-row {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+      /* Navigation Bar Styles */
+      .navbar {
+        background-color: #fff; /* Adjust the background color as needed */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        position: relative;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+      }
 
-    .image-row img {
-      width: 100%;
-      max-width: 300px;
-      border-radius: 12px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10vw; /* Consistent with body padding */
+        height: 60px; /* Adjust based on your preference */
+      }
 
-    .image-row img:hover {
-      transform: scale(1.03);
-    }
+      .nav-logo {
+        font-weight: 700;
+        font-size: 1.6em;
+        color: #121314;
+      }
 
-    iframe {
-      margin-top: 1em;
-      width: 100%;
-      height: 450px;
-      border: none;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
+      .nav-menu {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+      }
 
-    ul {
-      font-size: 1.15em;
-      padding-left: 1.5em;
-      max-width: 800px;
-    }
+      .nav-item {
+        margin-left: 20px;
+      }
 
-    ul li {
-      margin-bottom: 0.7em;
-      line-height: 1.6;
-    }
-  </style>
-</head>
-<body>
-  <h1>MusFinder: Intelligent Music Recommendation System</h1>
+      .nav-link {
+        text-decoration: none;
+        color: #121314;
+        font-weight: 500;
+        font-size: 1em;
+        transition: color 0.3s ease;
+      }
 
-  <h2>Report & Presentation</h2>
-  <ul>
-      <li><a href="../doc/essay/CSC211_Project_Pitch.pdf" target="_blank">Project Initial Pitch PDF</a></li>
-      <li><a href="../doc/essay/CSC211_Final_Report.pdf" target="_blank">Report PDF</a></li>
-      <li><a href="../doc/presentation/CSC211_Fianl_Presentation.pdf" target="_blank">Presentation PDF</a></li>
-  </ul>
+      .nav-link:hover {
+        color: #000; /* Change hover color as needed */
+      }
+      .navbar a {
+        color: #000; /* Set color to black */
+        text-decoration: none; /* Ensure no underline */
+        position: static; /* Override if needed, depending on your layout */
+      }
 
-  <h2>Team Member</h2>
-  <ul>
-    <li>Haotian Yang</li>
-    <li>Shouyi Lin</li>
-    <li>Nancy Choi</li>
-    <li>Wenxing Wang</li>
-  </ul>
+      .navbar a:after {
+        display: none; /* Hide the pseudo-element to remove the hover effect */
+      }
 
-  <h2>Description</h2>
-  <p>
-    MusFinder is an intelligent music recommendation system designed to integrate with
-    existing music applications, enhancing users' listening experience by providing more
-    personalized and context-aware music suggestions.
-  </p>
+      .navbar a:hover,
+      .navbar a:focus {
+        color: #000; /* Maintain black color on hover/focus */
+        /* No additional styles needed here to ensure no hover effect */
+      }
 
-  <h2>Low-Fidelity and Working Prototype</h2>
-  <div class="image-row">
-    <img src="../image/MusFinder/low_fi.png" alt="Low-fi Prototype" />
-    <img src="../image/MusFinder/working_prototype1.png" alt="Working Prototype Screenshot1" />
-    <img src="../image/MusFinder/working_prototype2.png" alt="Working Prototype Screenshot2" />
-  </div>
+      body {
+        font-family:
+          "Rubik",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Oxygen,
+          Ubuntu,
+          Cantarell,
+          "Open Sans",
+          "Helvetica Neue",
+          sans-serif;
+        font-size: calc(10px + 0.33vw);
+        -webkit-font-smoothing: antialiased;
+        background-color: #fafafa;
+        color: #222;
+        padding: 5vh 10vw;
+        line-height: 1.7;
+      }
 
-  <h2>Demo Video</h2>
-  <iframe src="https://www.youtube.com/embed/R9s6f8uGgBU?si=Zww5-g1aSxKmQs9y" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      h1,
+      h2 {
+        font-weight: 600;
+        color: #1a1a1a;
+      }
 
-  <h2>Highlights of Evaluation Result</h2>
-  <ul>
-    <li>Integrated a Large Language Model (LLM) API and built a user-friendly interface compatible with existing regular music applications.</li>
-    <li>Photo/Keyword Input: 100% task success; Users found it intuitive and matched to mood.</li>
-    <li>Context-Aware Recommendations: 80% saw appropriate music adjustments based on location.</li>
-    <li>Real-Time Feedback: 80% reported better recommendations after feedback input.</li>
-    <li>User Feedback: Praised interface ease and music match quality; suggested faster feedback response.</li>
-    <li>Behavioral Observations: Users explored freely with minimal guidance; slight hesitation with image uploads.</li>
-  </ul>
-</body>
+      h1 {
+        font-size: 3.2em;
+        margin-bottom: 0.6em;
+        border-bottom: 3px solid #1db954;
+        display: inline-block;
+        padding-bottom: 0.2em;
+      }
+
+      h2 {
+        font-size: 2em;
+        margin-top: 2.5em;
+        margin-bottom: 0.5em;
+      }
+
+      p {
+        font-size: 1.15em;
+        max-width: 850px;
+        margin-bottom: 1.5em;
+      }
+
+      .image-row {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 1em;
+      }
+
+      .image-row img {
+        width: 100%;
+        max-width: 300px;
+        border-radius: 12px;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .image-row img:hover {
+        transform: scale(1.03);
+      }
+
+      iframe {
+        margin-top: 1em;
+        width: 100%;
+        height: 450px;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      }
+
+      ul {
+        font-size: 1.15em;
+        padding-left: 1.5em;
+        max-width: 800px;
+      }
+
+      ul li {
+        margin-bottom: 0.7em;
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="../index.html" class="nav-logo">HY's Site</a>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="../index.html" class="nav-link">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a href="./blog.html" class="nav-link">BLOG</a>
+          </li>
+          <li class="nav-item">
+            <a href="./course.html" class="nav-link">COURSE</a>
+          </li>
+          <li class="nav-item">
+            <a href="https://www.linkedin.com/in/htyang114/" class="nav-link"
+              >LINKEDIN</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <h1>MusFinder: Intelligent Music Recommendation System</h1>
+
+    <h2>Report & Presentation</h2>
+    <ul>
+      <li>
+        <a href="../doc/essay/CSC211_Project_Pitch.pdf" target="_blank"
+          >Project Initial Pitch PDF</a
+        >
+      </li>
+      <li>
+        <a href="../doc/essay/CSC211_Final_Report.pdf" target="_blank"
+          >Report PDF</a
+        >
+      </li>
+      <li>
+        <a
+          href="../doc/presentation/CSC211_Fianl_Presentation.pdf"
+          target="_blank"
+          >Presentation PDF</a
+        >
+      </li>
+    </ul>
+
+    <h2>Team Member</h2>
+    <ul>
+      <li>Haotian Yang</li>
+      <li>Shouyi Lin</li>
+      <li>Nancy Choi</li>
+      <li>Wenxing Wang</li>
+    </ul>
+
+    <h2>Description</h2>
+    <p>
+      MusFinder is an intelligent music recommendation system designed to
+      integrate with existing music applications, enhancing users' listening
+      experience by providing more personalized and context-aware music
+      suggestions.
+    </p>
+
+    <h2>Low-Fidelity and Working Prototype</h2>
+    <div class="image-row">
+      <img src="../image/MusFinder/low_fi.png" alt="Low-fi Prototype" />
+      <img
+        src="../image/MusFinder/working_prototype1.png"
+        alt="Working Prototype Screenshot1"
+      />
+      <img
+        src="../image/MusFinder/working_prototype2.png"
+        alt="Working Prototype Screenshot2"
+      />
+    </div>
+
+    <h2>Demo Video</h2>
+    <iframe
+      src="https://www.youtube.com/embed/R9s6f8uGgBU?si=Zww5-g1aSxKmQs9y"
+      title="YouTube video player"
+      allow="
+        accelerometer;
+        autoplay;
+        clipboard-write;
+        encrypted-media;
+        gyroscope;
+        picture-in-picture;
+        web-share;
+      "
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+
+    <h2>Highlights of Evaluation Result</h2>
+    <ul>
+      <li>
+        Integrated a Large Language Model (LLM) API and built a user-friendly
+        interface compatible with existing regular music applications.
+      </li>
+      <li>
+        Photo/Keyword Input: 100% task success; Users found it intuitive and
+        matched to mood.
+      </li>
+      <li>
+        Context-Aware Recommendations: 80% saw appropriate music adjustments
+        based on location.
+      </li>
+      <li>
+        Real-Time Feedback: 80% reported better recommendations after feedback
+        input.
+      </li>
+      <li>
+        User Feedback: Praised interface ease and music match quality; suggested
+        faster feedback response.
+      </li>
+      <li>
+        Behavioral Observations: Users explored freely with minimal guidance;
+        slight hesitation with image uploads.
+      </li>
+    </ul>
+  </body>
 </html>

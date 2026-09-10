@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -9,40 +9,67 @@
       href="https://fonts.googleapis.com/css?family=Rubik:300,500,700"
       rel="stylesheet"
     />
-    <link rel="icon" type="image/png" href="image/icon/icon.png" sizes="32x32">
+    <link
+      rel="icon"
+      type="image/png"
+      href="image/icon/icon.png"
+      sizes="32x32"
+    />
     <style>
+      @media (max-width: 800px) {
+        .nav-container {
+          padding: 0 5vw; /* Reduce padding on smaller screens */
+          flex-wrap: wrap; /* Allow items to wrap to the next line */
+        }
 
-    @media (max-width: 800px) {
-      .nav-container {
-        padding: 0 5vw; /* Reduce padding on smaller screens */
-        flex-wrap: wrap; /* Allow items to wrap to the next line */
-      }
-      
-      .nav-menu {
-        justify-content: center; /* Center-align the menu items */
-        width: 100%; /* Ensure the menu takes full width */
-        padding-top: 20px; /* Add some space between the logo and menu items */
-      }
+        .nav-menu {
+          justify-content: center; /* Center-align the menu items */
+          width: 100%; /* Ensure the menu takes full width */
+          padding-top: 20px; /* Add some space between the logo and menu items */
+        }
 
-      .nav-item {
-        margin: 5px 0; /* Adjust margin for nav items */
+        .nav-item {
+          margin: 5px 0; /* Adjust margin for nav items */
+        }
+
+        .navbar {
+          box-shadow: none; /* Optional: remove box-shadow on smaller screens for a flat design */
+        }
+
+        body {
+          padding: 2vh 5vw;
+        }
+
+        .container {
+          flex-direction: column;
+        }
+
+        .left-section {
+          padding-right: 0;
+        }
+
+        .right-section {
+          padding-left: 0;
+          margin-top: 2em;
+        }
+
+        .right-section img:first-child {
+          margin-top: 0;
+        }
+
+        h1 {
+          font-size: 3em;
+        }
       }
-      
-      .navbar {
-        box-shadow: none; /* Optional: remove box-shadow on smaller screens for a flat design */
-      }
-    }
       /* Navigation Bar Styles */
       .navbar {
         background-color: #fff; /* Adjust the background color as needed */
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         position: relative;
         width: 100%;
         top: 0;
         z-index: 1000;
-        
       }
-      
 
       .nav-container {
         display: flex;
@@ -90,14 +117,24 @@
         display: none; /* Hide the pseudo-element to remove the hover effect */
       }
 
-      .navbar a:hover, .navbar a:focus {
+      .navbar a:hover,
+      .navbar a:focus {
         color: #000; /* Maintain black color on hover/focus */
         /* No additional styles needed here to ensure no hover effect */
       }
 
       body {
-        font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-          Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+        font-family:
+          "Rubik",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Oxygen,
+          Ubuntu,
+          Cantarell,
+          "Open Sans",
+          "Helvetica Neue",
           sans-serif;
         font-size: calc(10px + 0.33vw);
         -webkit-font-smoothing: antialiased;
@@ -114,7 +151,8 @@
         font-weight: 400;
         margin-bottom: 0;
       }
-      p {
+      p,
+      .school-info {
         font-size: 1.6em;
         font-weight: 300;
         line-height: 1.4;
@@ -127,7 +165,7 @@
         position: relative;
       }
       a:after {
-        content: '';
+        content: "";
         position: absolute;
         z-index: -1;
         top: 66%;
@@ -139,16 +177,16 @@
       }
       a:hover:after {
         top: 0%;
-      }   
+      }
       /* Flex container */
       .container {
-          display: flex;
-          justify-content: space-between;
+        display: flex;
+        justify-content: space-between;
       }
       /* Left section */
       .left-section {
-          flex: 1;
-          padding-right: 2em; /* spacing between sections */
+        flex: 1;
+        padding-right: 2em; /* spacing between sections */
       }
       /* Right section */
       .right-section {
@@ -170,174 +208,186 @@
       }
       /* Text in the right section */
       .right-section p {
-          text-align: center; /* Centers the text */
-          font-size: 1.2em; /* Adjust as needed */
+        text-align: center; /* Centers the text */
+        font-size: 1.2em; /* Adjust as needed */
       }
       /* code block */
       .code-block {
-          font-family: 'Courier New', Courier, monospace;
-          font-size: 16px;
-          background-color: #f4f4f4;
-          border: 1px solid #ddd;
-          padding: 10px;
-          border-radius: 4px;
-          white-space: pre-wrap; /* Ensures whitespace is preserved */
-          word-wrap: break-word; /* Allows long lines to wrap */
-          line-height: 1.5;
-          color: #333;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 16px;
+        background-color: #f4f4f4;
+        border: 1px solid #ddd;
+        padding: 10px;
+        border-radius: 4px;
+        white-space: pre-wrap; /* Ensures whitespace is preserved */
+        word-wrap: break-word; /* Allows long lines to wrap */
+        line-height: 1.5;
+        color: #333;
       }
       .email-button {
-          display: inline-block;
-          padding: 10px 20px;
-          background-color: rgba(169, 183, 170, 1); /* Adjust color as needed */
-          color: #ffffff;
-          text-decoration: none;
-          border-radius: 5px;
-          font-weight: bold;
-          margin-top: auto; /* Pushes the button to the bottom */
-          align-self: center; /* Centers the button horizontally */
-          transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: rgba(169, 183, 170, 1); /* Adjust color as needed */
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        margin-top: auto; /* Pushes the button to the bottom */
+        align-self: center; /* Centers the button horizontally */
+        transition: background-color 0.3s ease; /* Smooth transition for hover effect */
       }
       .email-button:hover {
-          background-color: rgba(169, 183, 170, 0.5); /* Slightly darker shade for hover */
+        background-color: rgba(
+          169,
+          183,
+          170,
+          0.5
+        ); /* Slightly darker shade for hover */
       }
       /* ul */
       ul.custom-list {
-          font-family: 'Arial', sans-serif;
-          font-size: 23px;
-          color: #333;
-          list-style-type: disc; /* Default bullet type, but you can change it */
-          margin: 0 0 20px 20px; /* Adjust as needed */
-          padding: 0;
+        font-family: "Arial", sans-serif;
+        font-size: 23px;
+        color: #333;
+        list-style-type: disc; /* Default bullet type, but you can change it */
+        margin: 0 0 20px 20px; /* Adjust as needed */
+        padding: 0;
       }
       ul.custom-list li {
-          line-height: 1.5;
-          margin-bottom: 10px; /* Space between list items */
-          padding-left: 25px; /* Space to the left of the text, can be adjusted or removed */
-          position: relative;
+        line-height: 1.5;
+        margin-bottom: 10px; /* Space between list items */
+        padding-left: 25px; /* Space to the left of the text, can be adjusted or removed */
+        position: relative;
       }
-      /* preview of URLs */
-      #imagePreview {
-        position: absolute;
-        border: 1px solid #ccc;
-        background-color: #fff;
-        padding: 5px;
-        display: none;
-        /* make sure the preview window is on the top */
-        z-index: 1000;
-      } 
-      #imagePreview img {
-          max-width: 200px;   
-          max-height: 200px; 
-      }
-
     </style>
   </head>
   <body>
-
     <nav class="navbar">
       <div class="nav-container">
         <a href="./" class="nav-logo">HY's Site</a>
         <ul class="nav-menu">
           <li class="nav-item"><a href="./" class="nav-link">HOME</a></li>
-          <li class="nav-item"><a href="./pages/blog.html" class="nav-link">BLOG</a></li>
-          <li class="nav-item"><a href="./pages/course.html" class="nav-link">COURSE</a></li>
-          <li class="nav-item"><a href="https://www.linkedin.com/in/htyang114/" class="nav-link">LINKEDIN</a></li>
+          <li class="nav-item">
+            <a href="./pages/blog.html" class="nav-link">BLOG</a>
+          </li>
+          <li class="nav-item">
+            <a href="./pages/course.html" class="nav-link">COURSE</a>
+          </li>
+          <li class="nav-item">
+            <a href="https://www.linkedin.com/in/htyang114/" class="nav-link"
+              >LINKEDIN</a
+            >
+          </li>
         </ul>
       </div>
     </nav>
-    
 
     <div class="container">
       <div class="left-section">
-
-        <div id="imagePreview">
-          <img id="previewImage" src="" alt="Image Preview" />
-        </div>
-
         <h1>Hello.</h1>
-        <p style="font-weight: 500; font-size: 2.2em">My name is Haotian Yang.</p>
+        <p style="font-weight: 500; font-size: 2.2em">
+          My name is Haotian Yang.
+        </p>
         <p>
-          I am a Senior student at the University of Rochester, 
-          majoring in Electrical and Computer Engineering (ECE) and
-          Computer Science (CS). 
-          <br></br>
-          I love sunshine, soccer, and exploring new technologies. 
-          I've been part of Hajim School at University of Rochester since 2021. I am a proactive engineering student with experience in multiple fields including Blockchain, Information Technology, Embedded Systems, and Energy Systems. In addition to working hard in ECE and CS, I contribute to supporting international students and local refugees in my spare time.  
-          <br></br>
+          I am a Senior student at the University of Rochester, majoring in
+          Electrical and Computer Engineering (ECE) and Computer Science (CS).
+          <br />
+          I love sunshine, soccer, and exploring new technologies. I've been
+          part of Hajim School at University of Rochester since 2021. I am a
+          proactive engineering student with experience in multiple fields
+          including Blockchain, Information Technology, Embedded Systems, and
+          Energy Systems. In addition to working hard in ECE and CS, I
+          contribute to supporting international students and local refugees in
+          my spare time.
+          <br />
           Meliora (which stands for 'ever better')!
         </p>
-        <br>
+        <br />
 
         <h2>1. Education</h2>
-        <br>
-        
+        <br />
+
         <h3>&emsp;&nbsp;&nbsp;College:</h3>
-        <p>
+        <div class="school-info">
           &emsp;<a href="https://www.rochester.edu/" target="_blank"
-          class="preview-link" 
-          data-image="image/website_screenshot/uni-rochester.png"
-          data-description="official website of the University of Rochester.">University of Rochester </a>
-          <br>
+            >University of Rochester
+          </a>
+          <br />
           <pre>&emsp;&emsp;&emsp;Electrical and Computer Engineering (BS)</pre>
-          <pre>&emsp;&emsp;&emsp;Computer Science (BA)</pre> 
+          <pre>&emsp;&emsp;&emsp;Computer Science (BA)</pre>
           <pre>&emsp;&emsp;&emsp;Expected Graduation: May 2026</pre>
-          <br>
-        </p>
+          <br />
+        </div>
         <h3>&emsp;&nbsp;&nbsp;High School:</h3>
-        <p>
-          <a href="https://www.chgzfls.com/" target="_blank" class="preview-link" 
-          data-image="image/website_screenshot/Guangzhou_Foreign_Language_School_logo.png"
-          data-description="official website of the Guangzhou Foreign Language School.">Guangzhou Foreign Language School</a> 
+        <div class="school-info">
+          <a href="https://www.chgzfls.com/" target="_blank"
+            >Guangzhou Foreign Language School</a
+          >
           <pre>&emsp;&emsp;&emsp;Graduation: May 2021.</pre>
-          <pre>&emsp;&emsp;&emsp;Soccer Team: 2018-2021 (Captain: 2021)</pre> 
-          <br>
-        </p>
-        
+          <pre>&emsp;&emsp;&emsp;Soccer Team: 2018-2021 (Captain: 2021)</pre>
+          <br />
+        </div>
+
         <h2>2. Professional Experiences</h2>
-        <br>
-        <p>&emsp;Facility Modeling Intern<br>&emsp;@ <a href="https://www.dominionenergy.com/" target="_blank"><i>Dominion Energy</i></a></p>
-        <p>&emsp;ITSS Intern<br>&emsp;@ <a href="https://www.ebay.com/" target="_blank"><i>eBay</i></a></p>
-        <p>&emsp;Engineering Intern<br>&emsp;@ <a href="https://www.gacrnd.com/" target="_blank"><i>GAC R&D Center</i></a></p>
-        <p>&emsp;Research Assistant<br>&emsp;@ <a href="https://www.urmc.rochester.edu/" target="_blank"><i>URMC</i></a></p>
-        <br>
+        <br />
+        <p>
+          &emsp;Facility Modeling Intern<br />&emsp;@
+          <a href="https://www.dominionenergy.com/" target="_blank"
+            ><i>Dominion Energy</i></a
+          >
+        </p>
+        <p>
+          &emsp;ITSS Intern<br />&emsp;@
+          <a href="https://www.ebay.com/" target="_blank"><i>eBay</i></a>
+        </p>
+        <p>
+          &emsp;Engineering Intern<br />&emsp;@
+          <a href="https://www.gacrnd.com/" target="_blank"
+            ><i>GAC R&D Center</i></a
+          >
+        </p>
+        <p>
+          &emsp;Research Assistant<br />&emsp;@
+          <a href="https://www.urmc.rochester.edu/" target="_blank"
+            ><i>URMC</i></a
+          >
+        </p>
+        <br />
 
         <h2>3. Interest</h2>
-        <br>
+        <br />
         <p>
-          &emsp;Computer Organization<br>
-          &emsp;Energy Industry<br>
-          &emsp;Technology Consulting<br>
+          &emsp;Computer Organization<br />
+          &emsp;Energy Industry<br />
+          &emsp;Technology Consulting<br />
         </p>
-        <br>
+        <br />
       </div>
       <div class="right-section">
-        <img src="image/profile/my_photo1.jpg" alt="Haotian Yang">
-        <img src="image/profile/my_photo2.jpg" alt="Haotian Yang and his motrocycle">
-        <img src="image/profile/my_photo4.jpeg" alt="Haotian Yang and eBay">
-        <img src="image/profile/my_photo3.jpg" alt="Haotian Yang and GAC R&D Center">
-        <img src="image/profile/dominion.jpg" alt="Haotian Yang and Dominion Energy">
-        <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a href="mailto:hyang57@u.rochester.edu" class="email-button">Contact with me by Email</a></p>
-        
+        <img src="image/profile/my_photo1.jpg" alt="Haotian Yang" />
+        <img
+          src="image/profile/my_photo2.jpg"
+          alt="Haotian Yang and his motrocycle"
+        />
+        <img src="image/profile/my_photo4.jpeg" alt="Haotian Yang and eBay" />
+        <img
+          src="image/profile/my_photo3.jpg"
+          alt="Haotian Yang and GAC R&D Center"
+        />
+        <img
+          src="image/profile/dominion.jpg"
+          alt="Haotian Yang and Dominion Energy"
+        />
+        <p>
+          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a
+            href="mailto:hyang57@u.rochester.edu"
+            class="email-button"
+            >Contact with me by Email</a
+          >
+        </p>
       </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-      /* window preview */
-        $(document).ready(function() {
-            $('.preview-link').hover(function(e) {
-                // Show the preview
-                $('#previewImage').attr('src', $(this).data('image'));
-                $('#imagePreview').css({
-                    top: e.pageY + 10 + 'px',
-                    left: e.pageX + 10 + 'px'
-                }).fadeIn();
-            }, function() {
-                // Hide the preview
-                $('#imagePreview').fadeOut();
-            });
-        });
-    </script>
   </body>
 </html>

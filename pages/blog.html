@@ -1,179 +1,302 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog</title>
-    <link rel="icon" type="image/png" href="../image/icon/icon.png" sizes="32x32">
+    <link
+      rel="icon"
+      type="image/png"
+      href="../image/icon/icon.png"
+      sizes="32x32"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Rubik:300,500,700"
+      rel="stylesheet"
+    />
     <style>
-
-    /* Navigation bar */
-    @media (max-width: 800px) {
+      @media (max-width: 800px) {
         .nav-container {
-            padding: 0 5vw; 
-            flex-wrap: wrap;
-        }
-        
-        .nav-menu {
-            justify-content: center;
-            width: 100%;
-            padding-top: 20px; 
-        }
-
-        .nav-item {
-            margin: 5px 0; 
-        }
-        
-        .navbar {
-            box-shadow: none; 
-        }
-        }
-        .navbar {
-            background-color: #fff; /* Adjust the background color as needed */
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            position: relative;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            
-        }
-        
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 10vw; /* Consistent with body padding */
-            height: 60px; /* Adjust based on your preference */
-        }
-
-        .nav-logo {
-            font-weight: 700;
-            font-size: 1.6em;
-            color: #121314;
+          padding: 0 5vw; /* Reduce padding on smaller screens */
+          flex-wrap: wrap; /* Allow items to wrap to the next line */
         }
 
         .nav-menu {
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
+          justify-content: center; /* Center-align the menu items */
+          width: 100%; /* Ensure the menu takes full width */
+          padding-top: 20px; /* Add some space between the logo and menu items */
         }
 
         .nav-item {
-            margin-left: 20px;
+          margin: 5px 0; /* Adjust margin for nav items */
         }
 
-        .nav-link {
-            text-decoration: none;
-            color: #121314;
-            font-weight: 500;
-            font-size: 1em;
-            transition: color 0.3s ease;
-        }
-
-        .nav-link:hover {
-            color: #000; 
-        }
-        .navbar a {
-            color: #000; 
-            text-decoration: none; 
-            position: static; 
-        }
-
-        .navbar a:after {
-            display: none; 
-        }
-
-        .navbar a:hover, .navbar a:focus {
-            color: #000; 
+        .navbar {
+          box-shadow: none; /* Optional: remove box-shadow on smaller screens for a flat design */
         }
 
         body {
-            font-family: Arial, sans-serif;
+          padding: 2vh 5vw;
         }
-        .year {
-            margin-left: 100px;
-            margin-top: 20px;
-        }
-        .year h2 {
-            color: #333;
-        }
+
+        .year,
         .area {
-            margin-left: 100px;
+          margin-left: 10px !important;
         }
-        .blog {
-            margin-top: 10px;
-        }
+      }
+      /* Navigation Bar Styles */
+      .navbar {
+        background-color: #fff; /* Adjust the background color as needed */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        position: relative;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10vw; /* Consistent with body padding */
+        height: 60px; /* Adjust based on your preference */
+      }
+
+      .nav-logo {
+        font-weight: 700;
+        font-size: 1.6em;
+        color: #121314;
+      }
+
+      .nav-menu {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav-item {
+        margin-left: 20px;
+      }
+
+      .nav-link {
+        text-decoration: none;
+        color: #121314;
+        font-weight: 500;
+        font-size: 1em;
+        transition: color 0.3s ease;
+      }
+
+      .nav-link:hover {
+        color: #000; /* Change hover color as needed */
+      }
+      .navbar a {
+        color: #000; /* Set color to black */
+        text-decoration: none; /* Ensure no underline */
+        position: static; /* Override if needed, depending on your layout */
+      }
+
+      .navbar a:after {
+        display: none; /* Hide the pseudo-element to remove the hover effect */
+      }
+
+      .navbar a:hover,
+      .navbar a:focus {
+        color: #000; /* Maintain black color on hover/focus */
+        /* No additional styles needed here to ensure no hover effect */
+      }
+
+      body {
+        font-family:
+          "Rubik",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Oxygen,
+          Ubuntu,
+          Cantarell,
+          "Open Sans",
+          "Helvetica Neue",
+          sans-serif;
+        font-size: calc(10px + 0.33vw);
+        -webkit-font-smoothing: antialiased;
+        padding: 5vh 10vw;
+        color: #121314;
+      }
+      .year {
+        margin-left: 100px;
+        margin-top: 20px;
+      }
+      .year h2 {
+        color: #333;
+      }
+      .area {
+        margin-left: 100px;
+      }
+      .blog {
+        margin-top: 10px;
+      }
     </style>
-</head>
-<body>
-
+  </head>
+  <body>
     <nav class="navbar">
-        <div class="nav-container">
-          <a href="../index.html" class="nav-logo">HY's Site</a>
-          <ul class="nav-menu">
-            <li class="nav-item"><a href="../index.html" class="nav-link">HOME</a></li>
-            <li class="nav-item"><a href="./blog.html" class="nav-link">BLOG</a></li>
-            <li class="nav-item"><a href="./course.html" class="nav-link">COURSE</a></li>
-            <li class="nav-item"><a href="https://www.linkedin.com/in/htyang114/" class="nav-link">LINKEDIN</a></li>
-          </ul>
-        </div>
-      </nav>
+      <div class="nav-container">
+        <a href="../index.html" class="nav-logo">HY's Site</a>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="../index.html" class="nav-link">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a href="./blog.html" class="nav-link">BLOG</a>
+          </li>
+          <li class="nav-item">
+            <a href="./course.html" class="nav-link">COURSE</a>
+          </li>
+          <li class="nav-item">
+            <a href="https://www.linkedin.com/in/htyang114/" class="nav-link"
+              >LINKEDIN</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
 
     <div class="year">
-        <h2>2021</h2>
-        <div class="area">
-            <div class="blog"><a href="../doc/essay/Hai Sporting Gear - The Forgotten Issey Miyake Diffusion Line (Simplified Chinese).pdf" target="_blank">Hai Sporting Gear - The Forgotten Issey Miyake Diffusion Line (Simplified Chinese)</a></div>
+      <h2>2021</h2>
+      <div class="area">
+        <div class="blog">
+          <a
+            href="../doc/essay/Hai Sporting Gear - The Forgotten Issey Miyake Diffusion Line (Simplified Chinese).pdf"
+            target="_blank"
+            >Hai Sporting Gear - The Forgotten Issey Miyake Diffusion Line
+            (Simplified Chinese)</a
+          >
         </div>
+      </div>
     </div>
-    
+
     <div class="year">
-        <h2>2022</h2>
-        <div class="area">
-            <div class="blog"><a href="../doc/essay/ECE213_Paper.pdf" target="_blank">Defending Against Backdooring Attacks on Deep
-                Neural Networks</a></div>
-            <div class="blog"><a href="../doc/presentation/ECE213_Presentation.pdf" target="_blank">Presentation Slides - How to Fight Against Backdoor Attacks to Secure Deep Neural Networks</a></div>
+      <h2>2022</h2>
+      <div class="area">
+        <div class="blog">
+          <a href="../doc/essay/ECE213_Paper.pdf" target="_blank"
+            >Defending Against Backdooring Attacks on Deep Neural Networks</a
+          >
         </div>
+        <div class="blog">
+          <a href="../doc/presentation/ECE213_Presentation.pdf" target="_blank"
+            >Presentation Slides - How to Fight Against Backdoor Attacks to
+            Secure Deep Neural Networks</a
+          >
+        </div>
+      </div>
     </div>
 
-<div class="year">
-    <h2>2023</h2>
-    <div class="area">
-        <div class="blog"><a href="../doc/essay/WRTG 105 Research Paper.pdf" target="_blank">Facing Climate Change Crisis:
-             Interconnection between Artificial 
-             Intelligence and Indigenous Knowledge</a></div>
+    <div class="year">
+      <h2>2023</h2>
+      <div class="area">
+        <div class="blog">
+          <a href="../doc/essay/WRTG 105 Research Paper.pdf" target="_blank"
+            >Facing Climate Change Crisis: Interconnection between Artificial
+            Intelligence and Indigenous Knowledge</a
+          >
+        </div>
+      </div>
     </div>
-</div>
 
-<div class="year">
-    <h2>2024</h2>
-    <div class="area">
-        <div class="blog"><a href="../doc/presentation/CSC_240_Final_Presentation.pdf" target="_blank">H1N1 Flu Vaccination Status Prediction</a></div>
-        <div class="blog"><a href="../doc/presentation/Design_a_thon_2024_Presentation.pdf" target="_blank">Presentation Slides - Design-a-thon 2024 - SpaceIn: Tracking Foot Traffic of Dining Halls and Fitness Center at University of Rochester</a></div>
-        <div class="blog"><a href="../doc/presentation/Design_a_thon_2024_Prototype.pdf" target="_blank">Prototype Design - SpaceIn</a></div>
-        <div class="blog"><a href="../doc/essay/ECE204_Survey.pdf" target="_blank">Secure Processor Architecture: An Overview and Exploration of ARM TrustZone</a></div>
+    <div class="year">
+      <h2>2024</h2>
+      <div class="area">
+        <div class="blog">
+          <a
+            href="../doc/presentation/CSC_240_Final_Presentation.pdf"
+            target="_blank"
+            >H1N1 Flu Vaccination Status Prediction</a
+          >
+        </div>
+        <div class="blog">
+          <a
+            href="../doc/presentation/Design_a_thon_2024_Presentation.pdf"
+            target="_blank"
+            >Presentation Slides - Design-a-thon 2024 - SpaceIn: Tracking Foot
+            Traffic of Dining Halls and Fitness Center at University of
+            Rochester</a
+          >
+        </div>
+        <div class="blog">
+          <a
+            href="../doc/presentation/Design_a_thon_2024_Prototype.pdf"
+            target="_blank"
+            >Prototype Design - SpaceIn</a
+          >
+        </div>
+        <div class="blog">
+          <a href="../doc/essay/ECE204_Survey.pdf" target="_blank"
+            >Secure Processor Architecture: An Overview and Exploration of ARM
+            TrustZone</a
+          >
+        </div>
+      </div>
     </div>
-</div>
 
-<div class="year">
-    <h2>2025</h2>
-    <div class="area">
-        <div class="blog"><a href="MusFinder.html" target="_blank">MusFinder: Intelligent Music Recommendation System</a></div>
-        <div class="blog"><a href="HeadphoneAmplifier.html" target="_blank">Single-Stage Headphone Amplifier with CMOY Architecture</a></div>
-        <div class="blog"><a href="../doc/essay/ECE280_Term_Paper.pdf" target="_blank">Can AI have consciousness?</a></div>
-        <div class="blog"><a href="../doc/presentation/CanvasChain_Meliora_Weekend.pdf" target="_blank">CanvasChain: Blockchain Based Authentication/Tracking for Fine Art Paintings</a></div>
+    <div class="year">
+      <h2>2025</h2>
+      <div class="area">
+        <div class="blog">
+          <a href="MusFinder.html" target="_blank"
+            >MusFinder: Intelligent Music Recommendation System</a
+          >
+        </div>
+        <div class="blog">
+          <a href="HeadphoneAmplifier.html" target="_blank"
+            >Single-Stage Headphone Amplifier with CMOY Architecture</a
+          >
+        </div>
+        <div class="blog">
+          <a href="../doc/essay/ECE280_Term_Paper.pdf" target="_blank"
+            >Can AI have consciousness?</a
+          >
+        </div>
+        <div class="blog">
+          <a
+            href="../doc/presentation/CanvasChain_Meliora_Weekend.pdf"
+            target="_blank"
+            >CanvasChain: Blockchain Based Authentication/Tracking for Fine Art
+            Paintings</a
+          >
+        </div>
+      </div>
     </div>
-</div>
 
-<div class="year">
-    <h2>2026</h2>
-    <div class="area">
-        <div class="blog"><a href="../doc/essay/Where Do AI Companies Draw the Line When It Comes to War? (Simplified Chinese).pdf" target="_blank">Where Do AI Companies Draw the Line When It Comes to War? (Simplified Chinese)</a></div>
-        <div class="blog"><a href="../doc/essay/Can Ultrafiltered Milk Carve Out a Niche in China? (Simplified Chinese).pdf" target="_blank">Can Ultrafiltered Milk Carve Out a Niche in China? (Simplified Chinese)</a></div>
-        <div class="blog"><a href="../doc/essay/Before Bed | Hiroshi Nagai, Tokyo, Southern California, and Graduation (Simplified Chinese).pdf" target="_blank">Before Bed | Hiroshi Nagai, Tokyo, Southern California, and Graduation (Simplified Chinese)</a></div>
+    <div class="year">
+      <h2>2026</h2>
+      <div class="area">
+        <div class="blog">
+          <a
+            href="../doc/essay/Where Do AI Companies Draw the Line When It Comes to War? (Simplified Chinese).pdf"
+            target="_blank"
+            >Where Do AI Companies Draw the Line When It Comes to War?
+            (Simplified Chinese)</a
+          >
+        </div>
+        <div class="blog">
+          <a
+            href="../doc/essay/Can Ultrafiltered Milk Carve Out a Niche in China? (Simplified Chinese).pdf"
+            target="_blank"
+            >Can Ultrafiltered Milk Carve Out a Niche in China? (Simplified
+            Chinese)</a
+          >
+        </div>
+        <div class="blog">
+          <a
+            href="../doc/essay/Before Bed | Hiroshi Nagai, Tokyo, Southern California, and Graduation (Simplified Chinese).pdf"
+            target="_blank"
+            >Before Bed | Hiroshi Nagai, Tokyo, Southern California, and
+            Graduation (Simplified Chinese)</a
+          >
+        </div>
+      </div>
     </div>
-</div>
-
-</body>
+  </body>
 </html>
