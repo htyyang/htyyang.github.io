@@ -156,7 +156,6 @@
         font-size: 1.6em;
         font-weight: 300;
         line-height: 1.4;
-        max-width: 32em;
       }
       a {
         text-decoration: none;
@@ -185,12 +184,12 @@
       }
       /* Left section */
       .left-section {
-        flex: 1;
+        flex: 3;
         padding-right: 2em; /* spacing between sections */
       }
       /* Right section */
       .right-section {
-        flex: 1;
+        flex: 2;
         padding-left: 2em; /* Some spacing between sections */
         display: flex;
         flex-direction: column;
@@ -198,7 +197,7 @@
         gap: 1em; /* Space between items */
       }
       .right-section img {
-        width: 60%; /* Adjust as needed */
+        width: 80%; /* Compensate for smaller flex container */
         border-radius: 10px; /* Rounded corners */
         margin-left: auto;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* A subtle shadow */
@@ -289,67 +288,75 @@
           My name is Haotian Yang.
         </p>
         <p>
-          I am a Senior student at the University of Rochester, majoring in
+          I graduated from the University of Rochester with a dual degree in
           Electrical and Computer Engineering (ECE) and Computer Science (CS).
           <br />
-          I love sunshine, soccer, and exploring new technologies. I've been
-          part of Hajim School at University of Rochester since 2021. I am a
-          proactive engineering student with experience in multiple fields
-          including Blockchain, Information Technology, Embedded Systems, and
-          Energy Systems. In addition to working hard in ECE and CS, I
-          contribute to supporting international students and local refugees in
-          my spare time.
           <br />
-          Meliora (which stands for 'ever better')!
+          I have strong passion for computer organization, security, and the
+          energy industry. I am always looking forward to connecting with
+          professionals across any field.
         </p>
         <br />
 
         <h2>1. Education</h2>
         <br />
 
-        <h3>&emsp;&nbsp;&nbsp;College:</h3>
-        <div class="school-info">
-          &emsp;<a href="https://www.rochester.edu/" target="_blank"
-            >University of Rochester
-          </a>
-          <br />
-          <pre>&emsp;&emsp;&emsp;Electrical and Computer Engineering (BS)</pre>
-          <pre>&emsp;&emsp;&emsp;Computer Science (BA)</pre>
-          <pre>&emsp;&emsp;&emsp;Expected Graduation: May 2026</pre>
-          <br />
-        </div>
-        <h3>&emsp;&nbsp;&nbsp;High School:</h3>
-        <div class="school-info">
-          <a href="https://www.chgzfls.com/" target="_blank"
-            >Guangzhou Foreign Language School</a
-          >
-          <pre>&emsp;&emsp;&emsp;Graduation: May 2021.</pre>
-          <pre>&emsp;&emsp;&emsp;Soccer Team: 2018-2021 (Captain: 2021)</pre>
-          <br />
-        </div>
+        <p>
+          &emsp;Undergraduate<br />&emsp;@&nbsp;<a
+            href="https://www.rochester.edu/"
+            target="_blank"
+            ><i>University of Rochester</i></a
+          ><br />
+          &emsp;&emsp;&emsp;Electrical and Computer Engineering (BS)<br />
+          &emsp;&emsp;&emsp;Computer Science (BA)<br />
+          &emsp;&emsp;&emsp;Graduation: May 2026
+        </p>
+        <p>
+          &emsp;High School<br />&emsp;@&nbsp;<a
+            href="https://www.linkedin.com/school/gzfls/"
+            target="_blank"
+            ><i>Guangzhou Foreign Language School</i></a
+          ><br />
+          &emsp;&emsp;&emsp;Graduation: May 2021<br />
+          &emsp;&emsp;&emsp;Soccer Team: 2018-2021 (Captain: 2021)
+        </p>
+        <br />
 
         <h2>2. Professional Experiences</h2>
         <br />
         <p>
-          &emsp;Facility Modeling Intern<br />&emsp;@
-          <a href="https://www.dominionenergy.com/" target="_blank"
+          &emsp;Incoming Associate Consultant<br />&emsp;@&nbsp;<a
+            href="https://www.pwccn.com/"
+            target="_blank"
+            ><i>PwC (PricewaterhouseCoopers)</i></a
+          >
+        </p>
+        <p>
+          &emsp;Facility Modeling Intern<br />&emsp;@&nbsp;<a
+            href="https://www.dominionenergy.com/"
+            target="_blank"
             ><i>Dominion Energy</i></a
           >
         </p>
         <p>
-          &emsp;ITSS Intern<br />&emsp;@
-          <a href="https://www.ebay.com/" target="_blank"><i>eBay</i></a>
-        </p>
-        <p>
-          &emsp;Engineering Intern<br />&emsp;@
-          <a href="https://www.gacrnd.com/" target="_blank"
-            ><i>GAC R&D Center</i></a
+          &emsp;Information Technology Services & Solutions Intern<br />&emsp;@&nbsp;<a
+            href="https://www.ebay.com/"
+            target="_blank"
+            ><i>eBay</i></a
           >
         </p>
         <p>
-          &emsp;Research Assistant<br />&emsp;@
-          <a href="https://www.urmc.rochester.edu/" target="_blank"
-            ><i>URMC</i></a
+          &emsp;Autonomous Driving Engineering Intern<br />&emsp;@&nbsp;<a
+            href="https://www.gacgroup.com/"
+            target="_blank"
+            ><i>Guangzhou Automobile Group R&D Center</i></a
+          >
+        </p>
+        <p>
+          &emsp;Research Assistant<br />&emsp;@&nbsp;<a
+            href="https://www.urmc.rochester.edu/labs/giacomelli"
+            target="_blank"
+            ><i>Giacomelli Lab - URMC</i></a
           >
         </p>
         <br />
@@ -364,19 +371,14 @@
         <br />
       </div>
       <div class="right-section">
-        <img src="image/profile/my_photo1.jpg" alt="Haotian Yang" />
         <img
-          src="image/profile/my_photo2.jpg"
-          alt="Haotian Yang and his motrocycle"
+          src="image/profile/dominion.jpg"
+          alt="Haotian Yang and Dominion Energy"
         />
         <img src="image/profile/my_photo4.jpeg" alt="Haotian Yang and eBay" />
         <img
           src="image/profile/my_photo3.jpg"
-          alt="Haotian Yang and GAC R&D Center"
-        />
-        <img
-          src="image/profile/dominion.jpg"
-          alt="Haotian Yang and Dominion Energy"
+          alt="Haotian Yang and Guangzhou Automobile Group R&D Center"
         />
         <p>
           &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a
