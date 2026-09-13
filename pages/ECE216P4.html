@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real-Time Feedback Control of a DC Gearmotor</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="../image/icon/icon.png"
+      sizes="32x32"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @media (max-width: 800px) {
+        .nav-container {
+          padding: 0 5vw; /* Reduce padding on smaller screens */
+          flex-wrap: wrap; /* Allow items to wrap to the next line */
+        }
+
+        .nav-menu {
+          justify-content: center; /* Center-align the menu items */
+          width: 100%; /* Ensure the menu takes full width */
+          padding-top: 20px; /* Add some space between the logo and menu items */
+        }
+
+        .nav-item {
+          margin: 5px 0; /* Adjust margin for nav items */
+        }
+
+        .navbar {
+          box-shadow: none; /* Optional: remove box-shadow on smaller screens for a flat design */
+        }
+
+        body {
+          padding: 2vh 5vw;
+        }
+
+        .image-row {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+      /* Navigation Bar Styles */
+      .navbar {
+        background-color: #fff; /* Adjust the background color as needed */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        position: relative;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10vw; /* Consistent with body padding */
+        height: 60px; /* Adjust based on your preference */
+      }
+
+      .nav-logo {
+        font-weight: 700;
+        font-size: 1.6em;
+        color: #121314;
+      }
+
+      .nav-menu {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav-item {
+        margin-left: 20px;
+      }
+
+      .nav-link {
+        text-decoration: none;
+        color: #121314;
+        font-weight: 500;
+        font-size: 1em;
+        transition: color 0.3s ease;
+      }
+
+      .nav-link:hover {
+        color: #000; /* Change hover color as needed */
+      }
+      .navbar a {
+        color: #000; /* Set color to black */
+        text-decoration: none; /* Ensure no underline */
+        position: static; /* Override if needed, depending on your layout */
+      }
+
+      .navbar a:after {
+        display: none; /* Hide the pseudo-element to remove the hover effect */
+      }
+
+      .navbar a:hover,
+      .navbar a:focus {
+        color: #000; /* Maintain black color on hover/focus */
+        /* No additional styles needed here to ensure no hover effect */
+      }
+
+      body {
+        font-family:
+          "Rubik",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Oxygen,
+          Ubuntu,
+          Cantarell,
+          "Open Sans",
+          "Helvetica Neue",
+          sans-serif;
+        font-size: calc(10px + 0.33vw);
+        -webkit-font-smoothing: antialiased;
+        background-color: #fafafa;
+        color: #222;
+        padding: 5vh 10vw;
+        line-height: 1.7;
+      }
+
+      h1,
+      h2 {
+        font-weight: 600;
+        color: #1a1a1a;
+      }
+
+      h1 {
+        font-size: 3.2em;
+        margin-bottom: 0.6em;
+        border-bottom: 3px solid #e7cc20;
+        display: inline-block;
+        padding-bottom: 0.2em;
+      }
+
+      h2 {
+        font-size: 2em;
+        margin-top: 2.5em;
+        margin-bottom: 0.5em;
+      }
+
+      p {
+        font-size: 1.15em;
+        max-width: 850px;
+        margin-bottom: 1.5em;
+      }
+
+      .image-row {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 1em;
+      }
+
+      .image-row img {
+        width: 100%;
+        max-width: 300px;
+        border-radius: 12px;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .image-row img:hover {
+        transform: scale(1.03);
+      }
+
+      iframe {
+        margin-top: 1em;
+        width: 100%;
+        height: 450px;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      }
+
+      ul {
+        font-size: 1.15em;
+        padding-left: 1.5em;
+        max-width: 800px;
+      }
+
+      ul li {
+        margin-bottom: 0.7em;
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="../index.html" class="nav-logo">HY's Site</a>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="../index.html" class="nav-link">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a href="./blog.html" class="nav-link">BLOG</a>
+          </li>
+          <li class="nav-item">
+            <a href="./course.html" class="nav-link">COURSE</a>
+          </li>
+          <li class="nav-item">
+            <a href="https://www.linkedin.com/in/htyang114/" class="nav-link"
+              >LINKEDIN</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <h1>Real-Time Feedback Control of a DC Gearmotor</h1>
+
+    <h2>Report & Demo</h2>
+    <ul>
+      <li>
+        <a href="../doc/essay/ECE216_Lab4_Report.pdf" target="_blank"
+          >Report PDF</a
+        >
+      </li>
+    </ul>
+    <div class="image-row">
+      <img src="../image/ECE216P4.JPEG" alt="Project Setup" />
+    </div>
+
+     <h2>Objective</h2>
+<p>To design and program a real-time embedded system capable of receiving target angular positions from a host computer and driving a DC gearmotor to those targets using closed-loop feedback control.</p>
+<h2>Hardware & Peripherals</h2>
+<p>Utilized a Microchip Explorer 16/32 board with a PIC32MX795F512L 32-bit MCU. The system and peripheral bus clocks were configured to 80 MHz. Handled low-level C initialization and register manipulation for Timers, Analog-to-Digital Converters (ADC), Universal Asynchronous Receiver-Transmitter (UART), and Output Compare (PWM) modules.</p>
+<h2>Sensor Processing</h2>
+<p>Tracked the motor's real-time position using a 48 CPR quadrature encoder. Implemented a Change Notification Interrupt Service Routine (ISR) paired with a deterministic state machine to decode the 2-bit A/B channel signals into precise angular measurements, accounting for the motor's 99:1 gear ratio.</p>
+<h2>Control Algorithms</h2>
+<p>Programmed three distinct control strategies in C, selectable dynamically via hardware interrupt push buttons. The first was an On/Off Control, acting as a bang-bang controller with a fixed deadband. The second was a Proportional (P) Control that modulated the PWM duty cycle linearly based on the angular error. The final implementation was a Proportional-Integral (PI) Control that utilized Euler integration to approximate the integral of the error over time, effectively eliminating the steady-state error present in the P-only controller.</p>
+<h2>Communication & Visualization</h2>
+<p>Established a bidirectional UART serial link operating at 230400 baud. The microcontroller received target reference angles from a MATLAB script and transmitted back current angles and timestamps at 25 Hz. This real-time data pipeline was used to plot transient step responses, enabling the empirical tuning of the proportional and integral gains to achieve optimal rise time and minimal overshoot.</p>
+
+  </body>
+</html>
